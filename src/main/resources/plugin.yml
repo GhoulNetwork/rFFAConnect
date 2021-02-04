@@ -1,0 +1,5 @@
+name: rConnect
+author: Ryzeon
+version: 1.0
+main: me.ryzeon.rconnect.rConnect
+description: To connect nether & final ffa
