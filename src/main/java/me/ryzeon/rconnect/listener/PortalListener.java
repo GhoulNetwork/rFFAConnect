@@ -21,12 +21,12 @@ public class PortalListener implements Listener {
     private void onPortalEvent(PlayerPortalEvent event) {
         Player player = event.getPlayer();
         if (event.getCause() != PlayerTeleportEvent.TeleportCause.NETHER_PORTAL) return;
-        event.setCancelled(true);
         if (player.getWorld().getName().equals(rConnect.INSTANCE.getServer().getWorlds().get(0).getName())) {
             rConnect.sendToServer(player, "nether-ffa");
         } else {
             rConnect.sendToServer(player, "over-ffa");
         }
+        event.setCancelled(true);
     }
 
     @EventHandler

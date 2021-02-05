@@ -31,7 +31,7 @@ public class RebootTask {
             public void run() {
                 if (time == startTime) {
                     Bukkit.broadcastMessage(CC.translate(CC.MEDIUM_CHAT_BAR));
-                    Bukkit.broadcastMessage(CC.translate("&cServer will reboot in 5 minutes."));
+                    Bukkit.broadcastMessage(CC.translate("&cServer will reboot in " + startTime + getContext(true) + "."));
                     Bukkit.broadcastMessage(CC.translate(CC.MEDIUM_CHAT_BAR));
                     Bukkit.getServer().getOnlinePlayers().forEach(player -> player.playSound(player.getLocation(), Sound.NOTE_PLING, 2F, 2F));
                 }

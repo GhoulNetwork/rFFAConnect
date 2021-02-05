@@ -36,9 +36,9 @@ public class rConnect extends JavaPlugin {
             logger("First enabled bungeeCord mode");
             return;
         }
-        Bukkit.getWorld("world").setAutoSave(false);
-        over = this.getServer().getName().equalsIgnoreCase("over");
+        over = Bukkit.getServerName().equalsIgnoreCase("over");
         logger("Register Listener.");
+        Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
         this.getServer().getPluginManager().registerEvents(new PortalListener(), this);
         logger("Done loading.");
 
@@ -50,6 +50,7 @@ public class rConnect extends JavaPlugin {
                 }
             }.runTaskLater(this, TimeUnit.HOURS.toSeconds(8) * 20);
         }
+        Bukkit.getWorlds().get(0).setAutoSave(false);
     }
 
     public static void sendToServer(Player player, String server) {
