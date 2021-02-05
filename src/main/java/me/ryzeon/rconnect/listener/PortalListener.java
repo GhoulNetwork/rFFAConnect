@@ -21,7 +21,7 @@ public class PortalListener implements Listener {
     private void onPortalEvent(PlayerPortalEvent event) {
         Player player = event.getPlayer();
         if (event.getCause() != PlayerTeleportEvent.TeleportCause.NETHER_PORTAL) return;
-        if (player.getWorld().getName().equals(rConnect.INSTANCE.getServer().getWorlds().get(0).getName())) {
+        if (rConnect.INSTANCE.isOver()){
             rConnect.sendToServer(player, "nether-ffa");
         } else {
             rConnect.sendToServer(player, "over-ffa");
